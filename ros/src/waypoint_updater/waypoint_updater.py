@@ -47,7 +47,7 @@ class WaypointUpdater(object):
         self.loop()
         
     def loop(self):
-        rate = rospy.Rate(50)
+        rate = rospy.Rate(10)
         while not rospy.is_shutdown():
             #if self.pose and self.base_waypoints:
             if not None in (self.pose, self.base_waypoints):
@@ -85,7 +85,6 @@ class WaypointUpdater(object):
         
     def pose_cb(self, msg):
         self.pose = msg
-        pass
 
     def waypoints_cb(self, waypoints):
         self.base_waypoints = waypoints

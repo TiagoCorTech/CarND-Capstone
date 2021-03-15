@@ -96,10 +96,10 @@ public:
     , param_flag_(0)
     , const_lookahead_distance_(4.0)
     , initial_velocity_(5.0)
-    , lookahead_distance_calc_ratio_(2.0)
-    , minimum_lookahead_distance_(6.0)
+    , lookahead_distance_calc_ratio_(1.0)
+    , minimum_lookahead_distance_(1.0) //6.0 --> 1.0
     , displacement_threshold_(0.2)
-    , relative_angle_threshold_(5.)
+    , relative_angle_threshold_(1.)   //5.0 --> 1.0
     , waypoint_set_(false)
     , pose_set_(false)
     , velocity_set_(false)

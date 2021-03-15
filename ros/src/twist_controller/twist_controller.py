@@ -50,15 +50,8 @@ class Controller(object):
         #curr_ang_vel = self.vel_lpf.filt(curr_ang_vel)
         
         
-        per_ang_vel_error = (curr_ang_vel - angular_vel)/angular_vel  
         
-        if per_ang_vel_error < 0.1:
-            damping = -0.5
-        elif per_ang_vel_error > 0.1:
-            damping = +0.5
-        
-        
-        steering = self.yaw_controller.get_steering(linear_vel, angular_vel, current_vel) + damping
+        steering = self.yaw_controller.get_steering(linear_vel, angular_vel, current_vel,curr_ang_vel) 
         
         rospy.logwarn("Angular Vel: {0}".format(angular_vel))
         #rospy.logwarn("Current Angular Vel: {0}".format(curr_ang_vel))
