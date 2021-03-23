@@ -17,7 +17,7 @@ class Controller(object):
         ki = 0.1
         kd = 0.
         mn = 0.
-        mx = 0.15
+        mx = 0.3
         self.throttle_controller = PID(kp,ki,kd,mn,mx)
         
         tau = 0.5
@@ -53,7 +53,7 @@ class Controller(object):
         
         steering = self.yaw_controller.get_steering(linear_vel, angular_vel, current_vel,curr_ang_vel) 
         
-        rospy.logwarn("Angular Vel: {0}".format(angular_vel))
+        #rospy.logwarn("Angular Vel: {0}".format(angular_vel))
         #rospy.logwarn("Current Angular Vel: {0}".format(curr_ang_vel))
         
         
